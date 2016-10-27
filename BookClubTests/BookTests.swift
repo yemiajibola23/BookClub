@@ -1,15 +1,14 @@
 //
-//  BookClubTests.swift
-//  BookClubTests
+//  BookTests.swift
+//  BookClub
 //
 //  Created by Yemi Ajibola on 10/27/16.
 //  Copyright © 2016 Yemi Ajibola. All rights reserved.
 //
 
 import XCTest
-@testable import BookClub
 
-class BookClubTests: XCTestCase {
+class BookTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

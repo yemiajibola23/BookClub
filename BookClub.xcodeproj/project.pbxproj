@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		DB968B781DC26D24007A7037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B771DC26D24007A7037 /* AppDelegate.swift */; };
-		DB968B7A1DC26D24007A7037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B791DC26D24007A7037 /* ViewController.swift */; };
 		DB968B7D1DC26D24007A7037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB968B7B1DC26D24007A7037 /* Main.storyboard */; };
 		DB968B7F1DC26D24007A7037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB968B7E1DC26D24007A7037 /* Assets.xcassets */; };
 		DB968B821DC26D24007A7037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB968B801DC26D24007A7037 /* LaunchScreen.storyboard */; };
-		DB968B8D1DC26D24007A7037 /* BookClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B8C1DC26D24007A7037 /* BookClubTests.swift */; };
-		DB968B981DC26D24007A7037 /* BookClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B971DC26D24007A7037 /* BookClubUITests.swift */; };
+		DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA61DC26FB5007A7037 /* BookTests.swift */; };
+		DB968BA91DC2705D007A7037 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA81DC2705D007A7037 /* Book.swift */; };
+		DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BAB1DC342FC007A7037 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,17 +36,17 @@
 /* Begin PBXFileReference section */
 		DB968B741DC26D24007A7037 /* BookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB968B771DC26D24007A7037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB968B791DC26D24007A7037 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB968B7C1DC26D24007A7037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB968B7E1DC26D24007A7037 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB968B811DC26D24007A7037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB968B831DC26D24007A7037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB968B881DC26D24007A7037 /* BookClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB968B8C1DC26D24007A7037 /* BookClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubTests.swift; sourceTree = "<group>"; };
 		DB968B8E1DC26D24007A7037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB968B931DC26D24007A7037 /* BookClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB968B971DC26D24007A7037 /* BookClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookClubUITests.swift; sourceTree = "<group>"; };
 		DB968B991DC26D25007A7037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB968BA61DC26FB5007A7037 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
+		DB968BA81DC2705D007A7037 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		DB968BAB1DC342FC007A7037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +97,8 @@
 		DB968B761DC26D24007A7037 /* BookClub */ = {
 			isa = PBXGroup;
 			children = (
-				DB968B771DC26D24007A7037 /* AppDelegate.swift */,
-				DB968B791DC26D24007A7037 /* ViewController.swift */,
-				DB968B7B1DC26D24007A7037 /* Main.storyboard */,
-				DB968B7E1DC26D24007A7037 /* Assets.xcassets */,
-				DB968B801DC26D24007A7037 /* LaunchScreen.storyboard */,
-				DB968B831DC26D24007A7037 /* Info.plist */,
+				DB968BA51DC26D47007A7037 /* Supporting Files */,
+				DB968BAA1DC341F5007A7037 /* Model */,
 			);
 			path = BookClub;
 			sourceTree = "<group>";
@@ -110,8 +106,8 @@
 		DB968B8B1DC26D24007A7037 /* BookClubTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB968B8C1DC26D24007A7037 /* BookClubTests.swift */,
 				DB968B8E1DC26D24007A7037 /* Info.plist */,
+				DB968BA61DC26FB5007A7037 /* BookTests.swift */,
 			);
 			path = BookClubTests;
 			sourceTree = "<group>";
@@ -119,10 +115,30 @@
 		DB968B961DC26D24007A7037 /* BookClubUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DB968B971DC26D24007A7037 /* BookClubUITests.swift */,
 				DB968B991DC26D25007A7037 /* Info.plist */,
 			);
 			path = BookClubUITests;
+			sourceTree = "<group>";
+		};
+		DB968BA51DC26D47007A7037 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB968B771DC26D24007A7037 /* AppDelegate.swift */,
+				DB968B7B1DC26D24007A7037 /* Main.storyboard */,
+				DB968B7E1DC26D24007A7037 /* Assets.xcassets */,
+				DB968B801DC26D24007A7037 /* LaunchScreen.storyboard */,
+				DB968B831DC26D24007A7037 /* Info.plist */,
+				DB968BAB1DC342FC007A7037 /* Constants.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DB968BAA1DC341F5007A7037 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB968BA81DC2705D007A7037 /* Book.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +215,7 @@
 					DB968B871DC26D24007A7037 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G4YGRUL9T2;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DB968B731DC26D23007A7037;
 					};
@@ -262,8 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB968B7A1DC26D24007A7037 /* ViewController.swift in Sources */,
+				DB968BA91DC2705D007A7037 /* Book.swift in Sources */,
 				DB968B781DC26D24007A7037 /* AppDelegate.swift in Sources */,
+				DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB968B8D1DC26D24007A7037 /* BookClubTests.swift in Sources */,
+				DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +297,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB968B981DC26D24007A7037 /* BookClubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +457,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = G4YGRUL9T2;
 				INFOPLIST_FILE = BookClubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YemiAjibola.BookClubTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookClub.app/BookClub";
 			};
@@ -455,6 +474,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = G4YGRUL9T2;
 				INFOPLIST_FILE = BookClubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

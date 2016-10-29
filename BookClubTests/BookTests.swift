@@ -19,7 +19,6 @@ class BookTests: XCTestCase {
         super.tearDown()
     }
     
-   
     func testBookHasTitleAndAuthor() {
         let book = Book(title: "Of Mice And Men", author: "John Steinbeck")
         

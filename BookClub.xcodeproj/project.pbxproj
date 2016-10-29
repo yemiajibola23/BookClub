@@ -18,6 +18,9 @@
 		DB968BAF1DC3B612007A7037 /* LibraryAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */; };
 		DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */; };
 		DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */; };
+		DBA34B4F1DC4E39B0001D348 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */; };
+		DBA34B511DC4E3DE0001D348 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B501DC4E3DE0001D348 /* HomeViewController.swift */; };
+		DBA34B531DC4E8AE0001D348 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B521DC4E8AE0001D348 /* StoryboardTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClientTests.swift; sourceTree = "<group>"; };
 		DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClient.swift; sourceTree = "<group>"; };
 		DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
+		DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		DBA34B501DC4E3DE0001D348 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DBA34B521DC4E8AE0001D348 /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 			children = (
 				DB968BA51DC26D47007A7037 /* Supporting Files */,
 				DB968BAA1DC341F5007A7037 /* Model */,
+				DBA34B501DC4E3DE0001D348 /* HomeViewController.swift */,
 			);
 			path = BookClub;
 			sourceTree = "<group>";
@@ -117,6 +124,8 @@
 				DB968B8E1DC26D24007A7037 /* Info.plist */,
 				DBA34B4D1DC4E35B0001D348 /* Model */,
 				DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */,
+				DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */,
+				DBA34B521DC4E8AE0001D348 /* StoryboardTests.swift */,
 			);
 			path = BookClubTests;
 			sourceTree = SOURCE_ROOT;
@@ -304,6 +313,7 @@
 				DB30844D1DC44D6300BD9A2A /* Reader.swift in Sources */,
 				DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */,
 				DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */,
+				DBA34B511DC4E3DE0001D348 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,8 +322,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */,
+				DBA34B531DC4E8AE0001D348 /* StoryboardTests.swift in Sources */,
 				DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */,
 				DB968BAF1DC3B612007A7037 /* LibraryAPIClientTests.swift in Sources */,
+				DBA34B4F1DC4E39B0001D348 /* HomeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

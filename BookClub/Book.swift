@@ -17,3 +17,13 @@ struct Book {
         self.author = author
     }
 }
+
+
+extension Book : Equatable {
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        if lhs.author.lowercased() != rhs.author.lowercased() { return false }
+        if lhs.title.lowercased() != rhs.title.lowercased() { return false }
+        
+        return true
+    }
+}

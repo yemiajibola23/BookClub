@@ -27,7 +27,7 @@ class HomeViewControllerTests: XCTestCase {
     }
     
     func testTableViewIsNotNilAfterViewDidLoad() {
-        XCTAssertNotNil(sut.bookCollectionView)
+        XCTAssertNotNil(sut.bookTableView)
     }
     
 }

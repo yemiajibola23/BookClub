@@ -9,10 +9,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var bookCollectionView: UICollectionView!
+    @IBOutlet var bookListDataProvider: BookListDataProvider!
+    @IBOutlet var bookTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bookListDataProvider.reader = Reader(name: nil)
+        bookTableView.dataSource = bookListDataProvider
+        bookTableView.delegate = bookListDataProvider
     }
 
     override func didReceiveMemoryWarning() {

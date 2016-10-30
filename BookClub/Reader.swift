@@ -26,7 +26,7 @@ class Reader {
         readBooks.append(book)
     }
     
-    func bookAt(index: Int) -> Book {
+    func bookAt(index: Int) -> Book? {
         return readBooks[index]
     }
     

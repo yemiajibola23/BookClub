@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,40 +19,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Vl-9c-Rev">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1B8-mL-dmM">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uWh-fO-jBn">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCell" id="NeP-aE-i7V">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="uMk-0e-6K0" customClass="BookTableViewCell" customModule="BookClub" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMk-0e-6K0" id="FFi-oF-LN7">
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vfW-s8-kee" firstAttribute="top" secondItem="7Vl-9c-Rev" secondAttribute="bottom" id="BmY-e1-laM"/>
-                            <constraint firstItem="7Vl-9c-Rev" firstAttribute="top" secondItem="FzO-GT-m7i" secondAttribute="top" id="Udd-ij-hfN"/>
-                            <constraint firstItem="7Vl-9c-Rev" firstAttribute="leading" secondItem="FzO-GT-m7i" secondAttribute="leading" id="gSi-HS-1XO"/>
-                            <constraint firstAttribute="trailing" secondItem="7Vl-9c-Rev" secondAttribute="trailing" id="zGJ-46-i0Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1B8-mL-dmM" secondAttribute="trailing" constant="-16" id="86L-Fd-Ubr"/>
+                            <constraint firstItem="vfW-s8-kee" firstAttribute="top" secondItem="1B8-mL-dmM" secondAttribute="bottom" id="IPQ-dN-8ar"/>
+                            <constraint firstItem="1B8-mL-dmM" firstAttribute="leading" secondItem="FzO-GT-m7i" secondAttribute="leadingMargin" constant="-16" id="eov-ZW-3Vl"/>
+                            <constraint firstItem="1B8-mL-dmM" firstAttribute="top" secondItem="hMp-bL-451" secondAttribute="bottom" constant="-64" id="lDv-6s-zrm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wlq-RT-je6"/>
                     <connections>
-                        <outlet property="bookCollectionView" destination="7Vl-9c-Rev" id="cMO-mn-SKV"/>
+                        <outlet property="bookListDataProvider" destination="HkQ-b9-t4o" id="1AF-ab-QLQ"/>
+                        <outlet property="bookTableView" destination="1B8-mL-dmM" id="byP-Vv-dge"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsL-q8-7BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="HkQ-b9-t4o" customClass="BookListDataProvider" customModule="BookClub" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="751.20000000000005" y="-11.244377811094454"/>
         </scene>

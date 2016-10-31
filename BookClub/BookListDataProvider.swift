@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookListDataProvider: NSObject, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegateFlowLayout {
+class BookListDataProvider: NSObject, UITableViewDelegate, UITableViewDataSource {
     var reader: Reader!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,8 +18,8 @@ class BookListDataProvider: NSObject, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookTableViewCell
         
-        if let book = reader.bookAt(index: indexPath.row) {
-                
+        if let bookForCell = reader.bookAt(index: indexPath.row) {
+                cell.configCellWithBook(book: bookForCell)
         }
         
         return cell

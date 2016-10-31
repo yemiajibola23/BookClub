@@ -9,8 +9,11 @@
 import UIKit
 
 class BookTableViewCell: UITableViewCell {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     func configCellWithBook(book: Book) {
-        
+        titleLabel.text = book.title
+        authorLabel.text = book.author
     }
 }

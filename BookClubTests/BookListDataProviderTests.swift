@@ -30,6 +30,7 @@ class BookListDataProviderTests: XCTestCase {
         tableView = controller.bookTableView
         
         tableView.dataSource = sut
+        tableView.delegate = sut
     
         reader = sut.reader
     }
@@ -57,10 +58,9 @@ class BookListDataProviderTests: XCTestCase {
     }
     
     func testBookCellForRowDequeuesCell() {
-        let mockTableView = MockTableView()
+        let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
         
-        mockTableView.dataSource = sut
-        mockTableView.register(BookTableViewCell.self, forCellReuseIdentifier: "BookCell")
+        mockTableView.register(MockBookCell.self, forCellReuseIdentifier: "BookCell")
         
         reader.addBook(book: Book(title: "Of Mice And Men", author: "John Steinbeck"))
         mockTableView.reloadData()
@@ -71,7 +71,7 @@ class BookListDataProviderTests: XCTestCase {
     }
     
     func testConfigCellGetsCalledInCellForRow() {
-        let mockTableView = MockTableView()
+        let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
         
         mockTableView.dataSource = sut
         mockTableView.register(MockBookCell.self, forCellReuseIdentifier: "BookCell")
@@ -94,6 +94,14 @@ extension BookListDataProviderTests {
         override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
             cellGotDequeued = true
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        
+        class func mockTableViewWithDataSource(dataSource: UITableViewDataSource) -> MockTableView {
+            let mockTableView = MockTableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
+            mockTableView.dataSource = dataSource
+            mockTableView.register(MockBookCell.self, forCellReuseIdentifier: "BookCell")
+            
+            return mockTableView
         }
     }
     

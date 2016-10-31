@@ -41,7 +41,7 @@ class ReaderTests: XCTestCase {
         
         let returnedBook = sut.bookAt(index: 0)
         
-        XCTAssertEqual(book.title, returnedBook.title)
+        XCTAssertEqual(book.title, returnedBook?.title)
     }
     
     func testRemoveBookDecrementsReadBookCount() {
@@ -63,5 +63,7 @@ class ReaderTests: XCTestCase {
         
         XCTAssertEqual(deletedBook.author, book.author)
     }
+    
+    
     
 }

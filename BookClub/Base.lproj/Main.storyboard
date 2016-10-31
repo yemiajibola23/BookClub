@@ -48,6 +48,7 @@
                                         <connections>
                                             <outlet property="authorLabel" destination="QgO-eN-2nj" id="o2S-FZ-lFz"/>
                                             <outlet property="titleLabel" destination="mbL-O6-lW6" id="XfB-Lb-tfs"/>
+                                            <segue destination="jus-SZ-2LV" kind="show" id="4kj-fJ-1na"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -71,6 +72,24 @@
                 <customObject id="HkQ-b9-t4o" customClass="BookListDataProvider" customModule="BookClub" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="751.20000000000005" y="-11.244377811094454"/>
+        </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="cy5-11-1P8">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jus-SZ-2LV" customClass="BookDetailViewController" customModule="BookClub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i5r-Fx-7HX"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZID-9E-gH0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kNY-Pu-53K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POY-ji-J65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1543" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jWG-5p-ioa">

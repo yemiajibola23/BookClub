@@ -30,9 +30,9 @@ class BookDetailViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
-    
-    func testBookDetailHasTitle() {
-       XCTAssertEqual(book.title, controller.navigationItem.title)
+    func testBookDetailHasBookInfo() {
+        XCTAssertEqual(book.title, controller.navigationItem.title)
+        XCTAssertEqual(book.author, controller.authorLabel.text)
     }
     
 }

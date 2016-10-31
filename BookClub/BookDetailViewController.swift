@@ -10,8 +10,10 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
     var book: Book!
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func viewDidLoad() {
-        self.navigationItem.title = book.title
+        navigationItem.title = book.title
+        authorLabel.text = book.author
     }
 }

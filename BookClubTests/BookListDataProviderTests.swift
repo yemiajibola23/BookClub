@@ -39,7 +39,7 @@ class BookListDataProviderTests: XCTestCase {
         super.tearDown()
     }
     
-    func testNumberOfItemsInCollectionIsReadBookCount() {
+    func testNumberOfItemsInListIsReadBookCount() {
         reader.addBook(book: Book(title: "Of Mice And Men", author: "John Steinbeck"))
         
        XCTAssertEqual(tableView.numberOfRows(inSection: 0), 1)
@@ -112,6 +112,7 @@ extension BookListDataProviderTests {
             bookForCell = book
         }
     }
+    
 }
 
 

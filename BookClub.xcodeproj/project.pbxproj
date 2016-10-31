@@ -15,6 +15,8 @@
 		DB42F9171DC7017100DEB6EB /* CommentListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F9161DC7017100DEB6EB /* CommentListDataProviderTests.swift */; };
 		DB42F9191DC7029A00DEB6EB /* CommentListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F9181DC7029A00DEB6EB /* CommentListDataProvider.swift */; };
 		DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F91A1DC705C400DEB6EB /* Comment.swift */; };
+		DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70C5D31DC7A07500171E15 /* CommentTableViewCell.swift */; };
+		DB70C5D61DC7A95100171E15 /* CommentCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70C5D51DC7A95100171E15 /* CommentCellTests.swift */; };
 		DB968B781DC26D24007A7037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B771DC26D24007A7037 /* AppDelegate.swift */; };
 		DB968B7D1DC26D24007A7037 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB968B7B1DC26D24007A7037 /* Main.storyboard */; };
 		DB968B7F1DC26D24007A7037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB968B7E1DC26D24007A7037 /* Assets.xcassets */; };
@@ -59,6 +61,8 @@
 		DB42F9161DC7017100DEB6EB /* CommentListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListDataProviderTests.swift; sourceTree = "<group>"; };
 		DB42F9181DC7029A00DEB6EB /* CommentListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListDataProvider.swift; sourceTree = "<group>"; };
 		DB42F91A1DC705C400DEB6EB /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		DB70C5D31DC7A07500171E15 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		DB70C5D51DC7A95100171E15 /* CommentCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCellTests.swift; sourceTree = "<group>"; };
 		DB968B741DC26D24007A7037 /* BookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB968B771DC26D24007A7037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB968B7C1DC26D24007A7037 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				DB42F90D1DC6A91F00DEB6EB /* BookCellTests.swift */,
+				DB70C5D51DC7A95100171E15 /* CommentCellTests.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			children = (
 				DBA34B611DC525D80001D348 /* BookCollectionViewCell.swift */,
 				DB42F90B1DC68F7400DEB6EB /* BookTableViewCell.swift */,
+				DB70C5D31DC7A07500171E15 /* CommentTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 				DB42F9191DC7029A00DEB6EB /* CommentListDataProvider.swift in Sources */,
 				DB42F90C1DC68F7400DEB6EB /* BookTableViewCell.swift in Sources */,
 				DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */,
+				DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */,
 				DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */,
 				DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */,
 				DBA34B511DC4E3DE0001D348 /* HomeViewController.swift in Sources */,
@@ -392,6 +399,7 @@
 				DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */,
 				DB42F9171DC7017100DEB6EB /* CommentListDataProviderTests.swift in Sources */,
 				DBA34B591DC4F2D60001D348 /* BookListDataProviderTests.swift in Sources */,
+				DB70C5D61DC7A95100171E15 /* CommentCellTests.swift in Sources */,
 				DB42F90E1DC6A91F00DEB6EB /* BookCellTests.swift in Sources */,
 				DBA34B531DC4E8AE0001D348 /* StoryboardTests.swift in Sources */,
 				DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */,

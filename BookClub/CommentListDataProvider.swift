@@ -16,7 +16,12 @@ class CommentListDataProvider: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
+        
+        //let comment = book.comments[indexPath.row]
+        
+        
+        return cell
     }
     
 }

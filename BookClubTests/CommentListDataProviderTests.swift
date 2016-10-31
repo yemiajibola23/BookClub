@@ -73,6 +73,19 @@ class CommentListDataProviderTests: XCTestCase {
         XCTAssertTrue(mockTableView.cellGotDequeued)
     }
     
+    func testConfigCellGetsCalled() {
+        let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
+        
+        let comment = Comment(text: "Test", username: "User")
+        sut.book.comments.append(comment)
+        
+        mockTableView.reloadData()
+        
+        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockCell
+        
+        XCTAssertEqual(comment, cell.commentForCell)
+    }
+    
 }
 
 extension CommentListDataProviderTests {
@@ -83,6 +96,25 @@ extension CommentListDataProviderTests {
             cellGotDequeued = true
             
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+        
+        class func mockTableViewWithDataSource(dataSource: UITableViewDataSource) -> MockTableView {
+            let mockTableView = MockTableView(frame: CGRect(x: 0, y: 0, width: 320, height: 480), style: .plain)
+            
+            mockTableView.dataSource = dataSource
+            
+            mockTableView.register(MockCell.self, forCellReuseIdentifier: "CommentCell")
+            
+            return mockTableView
+        }
+        
+        
+    }
+    
+    class MockCell: CommentTableViewCell {
+        var commentForCell: Comment?
+        override func configCellWithComment(comment: Comment) {
+              commentForCell = comment
         }
     }
 }

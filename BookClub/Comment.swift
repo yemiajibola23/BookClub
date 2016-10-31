@@ -12,3 +12,10 @@ struct Comment {
     var text: String
     var username: String
 }
+
+
+extension Comment: Equatable {
+    static func == (lhs: Comment, rhs: Comment) -> Bool {
+        return (lhs.text == rhs.text) && (lhs.username == rhs.username)
+    }
+}

@@ -73,9 +73,6 @@ class BookListDataProviderTests: XCTestCase {
     func testConfigCellGetsCalledInCellForRow() {
         let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
         
-        mockTableView.dataSource = sut
-        mockTableView.register(MockBookCell.self, forCellReuseIdentifier: "BookCell")
-        
         let book = Book(title: "Of Mice And Men", author: "John Steinbeck")
         reader.addBook(book: book)
         mockTableView.reloadData()

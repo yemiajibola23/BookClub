@@ -35,4 +35,8 @@ class BookDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(book.author, controller.authorLabel.text)
     }
     
+    func testBookDetailCommentsNotNil() {
+        XCTAssertNotNil(controller.commentsTableView)
+    }
+    
 }

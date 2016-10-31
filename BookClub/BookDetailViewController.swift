@@ -10,7 +10,9 @@ import UIKit
 
 class BookDetailViewController: UIViewController {
     var book: Book!
+    
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var commentsTableView: UITableView!
     
     override func viewDidLoad() {
         navigationItem.title = book.title

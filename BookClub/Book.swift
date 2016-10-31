@@ -11,10 +11,12 @@ import Foundation
 struct Book {
     var title: String
     var author: String
+    var comments: [Comment]
     
     init(title: String, author: String) {
         self.title = title
         self.author = author
+        self.comments = [Comment]()
     }
 }
 

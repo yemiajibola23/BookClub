@@ -9,7 +9,6 @@
 import UIKit
 
 class CommentTableViewCell: UITableViewCell {
-    var comment: Comment!
 
     @IBOutlet weak var commentTextLabel: UILabel!
     @IBOutlet weak var commentUserLabel: UILabel!

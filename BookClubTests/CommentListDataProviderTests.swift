@@ -39,16 +39,16 @@ class CommentListDataProviderTests: XCTestCase {
     func testNumberOfCommentsInListIsNumberOfCommentsForBook() {
         
         let comment = Comment(text: "Test Comment", username: "User")
-        sut.book.comments.append(comment)
+        sut.book.addComment(comment: comment)
         
         tableView.reloadData()
         
-        XCTAssertEqual(tableView.numberOfRows(inSection: 0), sut.book.comments.count)
+        XCTAssertEqual(tableView.numberOfRows(inSection: 0), sut.book.commentsCount)
     }
     
     func testCellIsCommentTableViewCell() {
         let comment = Comment(text: "Test Comment", username: "User")
-        sut.book.comments.append(comment)
+        sut.book.addComment(comment: comment)
         
         tableView.reloadData()
         
@@ -58,13 +58,10 @@ class CommentListDataProviderTests: XCTestCase {
     }
     
     func testCellForRowDequeuesCell() {
-        let mockTableView = MockTableView()
-        mockTableView.dataSource = sut
-        
-        mockTableView.register(CommentTableViewCell.self, forCellReuseIdentifier: "CommentCell")
+       let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
         
         let comment = Comment(text: "Test Comment", username: "User")
-        sut.book.comments.append(comment)
+        sut.book.addComment(comment: comment)
         
         mockTableView.reloadData()
         
@@ -77,7 +74,7 @@ class CommentListDataProviderTests: XCTestCase {
         let mockTableView = MockTableView.mockTableViewWithDataSource(dataSource: sut)
         
         let comment = Comment(text: "Test", username: "User")
-        sut.book.comments.append(comment)
+        sut.book.addComment(comment: comment)
         
         mockTableView.reloadData()
         

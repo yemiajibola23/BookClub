@@ -11,12 +11,23 @@ import Foundation
 struct Book {
     var title: String
     var author: String
-    var comments: [Comment]
+    private var comments: [Comment]
+    var commentsCount: Int { return comments.count }
     
     init(title: String, author: String) {
         self.title = title
         self.author = author
-        self.comments = [Comment]()
+        comments = [Comment]()
+    }
+    
+    mutating func addComment(comment: Comment) {
+        comments.append(comment)
+    }
+    
+    func commentAt(index: Int) -> Comment? {
+        
+        if index >= commentsCount || index < 0 { return nil }
+        return comments[index]
     }
 }
 

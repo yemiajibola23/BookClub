@@ -62,7 +62,13 @@
                             <constraint firstItem="1B8-mL-dmM" firstAttribute="top" secondItem="hMp-bL-451" secondAttribute="bottom" constant="-64" id="lDv-6s-zrm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Wlq-RT-je6"/>
+                    <navigationItem key="navigationItem" id="Wlq-RT-je6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8Mm-f1-gfO">
+                            <connections>
+                                <action selector="addNewBookWithSender:" destination="AZA-lE-1Cx" id="LIb-bX-hR1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bookListDataProvider" destination="HkQ-b9-t4o" id="1AF-ab-QLQ"/>
                         <outlet property="bookTableView" destination="1B8-mL-dmM" id="byP-Vv-dge"/>
@@ -175,10 +181,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="XuC-yp-Gsk" id="4bF-l0-HZS"/>
+                        <outlet property="commentListDataProvider" destination="oqw-qH-3Wa" id="nqF-np-q9s"/>
                         <outlet property="commentsTableView" destination="EKn-9i-6SZ" id="yfb-WZ-wto"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POY-ji-J65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="oqw-qH-3Wa" customClass="CommentListDataProvider" customModule="BookClub" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1541.5999999999999" y="-11.244377811094454"/>
         </scene>

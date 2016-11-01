@@ -13,9 +13,13 @@ class BookDetailViewController: UIViewController {
     
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var commentListDataProvider: CommentListDataProvider!
     
     override func viewDidLoad() {
         navigationItem.title = book.title
         authorLabel.text = book.author
+        commentListDataProvider.book = book
+        
+        commentsTableView.dataSource = commentListDataProvider
     }
 }

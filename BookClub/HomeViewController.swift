@@ -25,6 +25,8 @@ class HomeViewController: UIViewController {
     }
     
 
-    
+    @IBAction func addNewBook(sender: UIBarButtonItem) {
+        
+    }
 
 }

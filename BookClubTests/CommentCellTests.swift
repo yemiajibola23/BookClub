@@ -36,10 +36,8 @@ class CommentCellTests: XCTestCase {
     
     
     func testCommentCellHasLabels() {
-        
         XCTAssertNotNil(cell.commentTextLabel)
         XCTAssertNotNil(cell.commentUserLabel)
-        
     }
     
     func testCommentCellHasDetails() {

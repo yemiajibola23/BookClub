@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1318B81DC93EA5002F9EE5 /* LibraryAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1318B71DC93EA5002F9EE5 /* LibraryAPIClientTests.swift */; };
 		DB30844D1DC44D6300BD9A2A /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB30844C1DC44D6300BD9A2A /* Reader.swift */; };
 		DB42F90C1DC68F7400DEB6EB /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F90B1DC68F7400DEB6EB /* BookTableViewCell.swift */; };
 		DB42F90E1DC6A91F00DEB6EB /* BookCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F90D1DC6A91F00DEB6EB /* BookCellTests.swift */; };
@@ -15,6 +16,8 @@
 		DB42F9171DC7017100DEB6EB /* CommentListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F9161DC7017100DEB6EB /* CommentListDataProviderTests.swift */; };
 		DB42F9191DC7029A00DEB6EB /* CommentListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F9181DC7029A00DEB6EB /* CommentListDataProvider.swift */; };
 		DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB42F91A1DC705C400DEB6EB /* Comment.swift */; };
+		DB6F091A1DC913C500C6E74C /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6F09191DC913C500C6E74C /* BookStore.swift */; };
+		DB6F091C1DC9202A00C6E74C /* BookStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6F091B1DC9202A00C6E74C /* BookStoreTests.swift */; };
 		DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70C5D31DC7A07500171E15 /* CommentTableViewCell.swift */; };
 		DB70C5D61DC7A95100171E15 /* CommentCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB70C5D51DC7A95100171E15 /* CommentCellTests.swift */; };
 		DB968B781DC26D24007A7037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968B771DC26D24007A7037 /* AppDelegate.swift */; };
@@ -24,7 +27,6 @@
 		DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA61DC26FB5007A7037 /* BookTests.swift */; };
 		DB968BA91DC2705D007A7037 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA81DC2705D007A7037 /* Book.swift */; };
 		DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BAB1DC342FC007A7037 /* Constants.swift */; };
-		DB968BAF1DC3B612007A7037 /* LibraryAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */; };
 		DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */; };
 		DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */; };
 		DBA34B4F1DC4E39B0001D348 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB1318B71DC93EA5002F9EE5 /* LibraryAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClientTests.swift; sourceTree = "<group>"; };
 		DB30844C1DC44D6300BD9A2A /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
 		DB42F90B1DC68F7400DEB6EB /* BookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		DB42F90D1DC6A91F00DEB6EB /* BookCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCellTests.swift; sourceTree = "<group>"; };
@@ -61,6 +64,8 @@
 		DB42F9161DC7017100DEB6EB /* CommentListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListDataProviderTests.swift; sourceTree = "<group>"; };
 		DB42F9181DC7029A00DEB6EB /* CommentListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentListDataProvider.swift; sourceTree = "<group>"; };
 		DB42F91A1DC705C400DEB6EB /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		DB6F09191DC913C500C6E74C /* BookStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
+		DB6F091B1DC9202A00C6E74C /* BookStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStoreTests.swift; sourceTree = "<group>"; };
 		DB70C5D31DC7A07500171E15 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		DB70C5D51DC7A95100171E15 /* CommentCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCellTests.swift; sourceTree = "<group>"; };
 		DB968B741DC26D24007A7037 /* BookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +81,6 @@
 		DB968BA61DC26FB5007A7037 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		DB968BA81DC2705D007A7037 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		DB968BAB1DC342FC007A7037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClientTests.swift; sourceTree = "<group>"; };
 		DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClient.swift; sourceTree = "<group>"; };
 		DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
 		DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				DB968BAA1DC341F5007A7037 /* Model */,
 				DBA34B541DC4EAEC0001D348 /* Controller */,
 				DBA34B601DC5254B0001D348 /* View */,
+				DB6F09191DC913C500C6E74C /* BookStore.swift */,
 			);
 			path = BookClub;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				DBA34B4D1DC4E35B0001D348 /* Model */,
 				DBA34B551DC4EB050001D348 /* Controller */,
 				DB42F90F1DC6BE1100DEB6EB /* View */,
+				DB6F091B1DC9202A00C6E74C /* BookStoreTests.swift */,
 			);
 			path = BookClubTests;
 			sourceTree = SOURCE_ROOT;
@@ -198,9 +204,9 @@
 		DBA34B4D1DC4E35B0001D348 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DB968BAE1DC3B612007A7037 /* LibraryAPIClientTests.swift */,
 				DB968BA61DC26FB5007A7037 /* BookTests.swift */,
 				DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */,
+				DB1318B71DC93EA5002F9EE5 /* LibraryAPIClientTests.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -301,7 +307,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Yemi Ajibola";
 				TargetAttributes = {
 					DB968B731DC26D23007A7037 = {
@@ -382,6 +388,7 @@
 				DB30844D1DC44D6300BD9A2A /* Reader.swift in Sources */,
 				DB42F9131DC6C8A500DEB6EB /* BookDetailViewController.swift in Sources */,
 				DB42F9191DC7029A00DEB6EB /* CommentListDataProvider.swift in Sources */,
+				DB6F091A1DC913C500C6E74C /* BookStore.swift in Sources */,
 				DB42F90C1DC68F7400DEB6EB /* BookTableViewCell.swift in Sources */,
 				DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */,
 				DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */,
@@ -402,8 +409,9 @@
 				DB70C5D61DC7A95100171E15 /* CommentCellTests.swift in Sources */,
 				DB42F90E1DC6A91F00DEB6EB /* BookCellTests.swift in Sources */,
 				DBA34B531DC4E8AE0001D348 /* StoryboardTests.swift in Sources */,
+				DB6F091C1DC9202A00C6E74C /* BookStoreTests.swift in Sources */,
+				DB1318B81DC93EA5002F9EE5 /* LibraryAPIClientTests.swift in Sources */,
 				DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */,
-				DB968BAF1DC3B612007A7037 /* LibraryAPIClientTests.swift in Sources */,
 				DB42F9111DC6C81E00DEB6EB /* BookDetailViewControllerTests.swift in Sources */,
 				DBA34B4F1DC4E39B0001D348 /* HomeViewControllerTests.swift in Sources */,
 			);
@@ -469,6 +477,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -518,6 +527,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

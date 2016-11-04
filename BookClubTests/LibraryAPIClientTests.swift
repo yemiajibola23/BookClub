@@ -2,7 +2,7 @@
 //  LibraryAPIClientTests.swift
 //  BookClub
 //
-//  Created by Yemi Ajibola on 10/28/16.
+//  Created by Yemi Ajibola on 11/1/16.
 //  Copyright © 2016 Yemi Ajibola. All rights reserved.
 //
 
@@ -19,26 +19,14 @@ class LibraryAPIClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func testLibraryAPIClientGivesBackResponse() {
-        var sut = LibraryAPIClient()
-        let mockURLSession = MockURLSession()
+    func testLibrarySearchURLReturnsValidURL() {
+        //let sut = LibraryAPIClient()
         
-        sut.session = mockURLSession
+        let url = LibraryAPIClient.searchItemURL(query: "bladj;afjf;")
+        
+        let application = UIApplication.shared
+        
+        XCTAssertTrue(application.canOpenURL(url))
     }
     
-}
-
-extension LibraryAPIClientTests {
-    class MockURLSession: BookClubURLSession {
-        typealias Handler = (Data?, URLResponse?, Error?) -> Void
-        var completionHandler: Handler?
-        var url: URL?
-        
-        func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) -> URLSessionDataTask {
-            self.url = url
-            self.completionHandler = completionHandler
-            
-            return URLSession.shared.dataTask(with: url)
-        }
-    }
 }

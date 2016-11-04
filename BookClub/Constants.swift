@@ -7,5 +7,3 @@
 //
 
 import Foundation
-
-let API_KEY = "3c49a8cebbfd0334a9d3bc88c48756a0"

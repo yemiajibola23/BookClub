@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, FirebaseAuthenticatorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FirebaseAuthenticator.listenForLogin()
+        //FirebaseAuthenticator.listenForLogin()
         FirebaseAuthenticator.delegate = self
     }
     
@@ -26,11 +26,35 @@ class LoginViewController: UIViewController, FirebaseAuthenticatorDelegate {
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
+        
         FirebaseAuthenticator.login(email: email, password: password)
     }
     
     @IBAction func createUserButtonTapped(sender: UIButton) {
+        let createUserAlert = UIAlertController(title: "Create A New Account", message: nil, preferredStyle: .alert)
+        createUserAlert.addTextField { (textField) in
+            textField.placeholder = "Email Address"
+        }
+        createUserAlert.addTextField { (textField) in
+            textField.placeholder = "Password"
+        }
+        createUserAlert.addTextField { (textField) in
+            textField.placeholder = "Name"
+        }
         
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {(_) in
+            let email = createUserAlert.textFields?[0].text!
+            let password = createUserAlert.textFields?[1].text!
+            let name = createUserAlert.textFields?[2].text!
+            FirebaseAuthenticator.newUser(email: email!, password: password!, name: name!)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        createUserAlert.addAction(okAction)
+        createUserAlert.addAction(cancelAction)
+        
+        present(createUserAlert, animated: true, completion: nil)
     }
     
     func loginVerified() {

@@ -8,6 +8,7 @@ target 'BookClub' do
   # Pods for BookClub
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
+    pod 'Firebase/Database'
 
   target 'BookClubTests' do
     inherit! :search_paths

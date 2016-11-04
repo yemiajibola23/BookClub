@@ -44,9 +44,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45G-nk-yPM">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45G-nk-yPM">
                                 <rect key="frame" x="0.0" y="631" width="375" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't Have An Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHH-pS-ex6">
                                         <rect key="frame" x="8" y="7" width="185" height="21"/>
@@ -59,12 +58,23 @@
                                         <rect key="frame" x="201" y="2" width="82" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Create One."/>
+                                        <connections>
+                                            <action selector="createUserButtonTappedWithSender:" destination="OZO-Wt-vee" eventType="touchUpInside" id="2VK-WT-Ufa"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="5Np-nx-PiD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="45G-nk-yPM" secondAttribute="trailing" id="cww-y4-Wxz"/>
+                            <constraint firstItem="kxk-Po-0V0" firstAttribute="top" secondItem="45G-nk-yPM" secondAttribute="bottom" id="wrZ-Mg-9Lz"/>
+                            <constraint firstItem="45G-nk-yPM" firstAttribute="leading" secondItem="iH0-yg-P0h" secondAttribute="leading" id="xCi-ar-Ch9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wHk-Vf-8Kf"/>
                     <connections>
@@ -148,7 +158,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JsL-q8-7BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="HkQ-b9-t4o" customClass="BookListDataProvider" customModule="BookClub" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="-11"/>
+            <point key="canvasLocation" x="1710" y="-13"/>
         </scene>
         <!--Title-->
         <scene sceneID="cy5-11-1P8">

@@ -41,6 +41,7 @@
 		DBE157B01DCC491D0063A0D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */; };
 		DBE157B21DCC4CF80063A0D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */; };
 		DBE157B71DCC657C0063A0D7 /* FirebaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */; };
+		DBE157B91DCCCB000063A0D7 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B81DCCCB000063A0D7 /* FirebaseDatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DBE157B51DCC647A0063A0D7 /* BookClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookClub.entitlements; sourceTree = "<group>"; };
 		DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticator.swift; sourceTree = "<group>"; };
+		DBE157B81DCCCB000063A0D7 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				DB30844C1DC44D6300BD9A2A /* Reader.swift */,
 				DB42F91A1DC705C400DEB6EB /* Comment.swift */,
 				DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */,
+				DBE157B81DCCCB000063A0D7 /* FirebaseDatabaseManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				DB42F9191DC7029A00DEB6EB /* CommentListDataProvider.swift in Sources */,
 				DB6F091A1DC913C500C6E74C /* BookStore.swift in Sources */,
 				DB42F90C1DC68F7400DEB6EB /* BookTableViewCell.swift in Sources */,
+				DBE157B91DCCCB000063A0D7 /* FirebaseDatabaseManager.swift in Sources */,
 				DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */,
 				DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */,
 				DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */,

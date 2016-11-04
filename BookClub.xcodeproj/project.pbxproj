@@ -40,6 +40,7 @@
 		DBA34B621DC525D80001D348 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B611DC525D80001D348 /* BookCollectionViewCell.swift */; };
 		DBE157B01DCC491D0063A0D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */; };
 		DBE157B21DCC4CF80063A0D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */; };
+		DBE157B71DCC657C0063A0D7 /* FirebaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		DBA34B611DC525D80001D348 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DBE157B51DCC647A0063A0D7 /* BookClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookClub.entitlements; sourceTree = "<group>"; };
+		DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthenticator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,7 @@
 		DB968B761DC26D24007A7037 /* BookClub */ = {
 			isa = PBXGroup;
 			children = (
+				DBE157B51DCC647A0063A0D7 /* BookClub.entitlements */,
 				DB968BA51DC26D47007A7037 /* Supporting Files */,
 				DB968BAA1DC341F5007A7037 /* Model */,
 				DBA34B541DC4EAEC0001D348 /* Controller */,
@@ -242,6 +246,7 @@
 				DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */,
 				DB30844C1DC44D6300BD9A2A /* Reader.swift */,
 				DB42F91A1DC705C400DEB6EB /* Comment.swift */,
+				DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -368,6 +373,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G4YGRUL9T2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					DB968B871DC26D24007A7037 = {
 						CreatedOnToolsVersion = 8.0;
@@ -562,6 +572,7 @@
 			files = (
 				DB968BA91DC2705D007A7037 /* Book.swift in Sources */,
 				DBA34B621DC525D80001D348 /* BookCollectionViewCell.swift in Sources */,
+				DBE157B71DCC657C0063A0D7 /* FirebaseAuthenticator.swift in Sources */,
 				DB968B781DC26D24007A7037 /* AppDelegate.swift in Sources */,
 				DBE157B21DCC4CF80063A0D7 /* LoginViewController.swift in Sources */,
 				DB30844D1DC44D6300BD9A2A /* Reader.swift in Sources */,
@@ -736,6 +747,7 @@
 			baseConfigurationReference = 1AFD730938430DC698624D6E /* Pods-BookClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BookClub/BookClub.entitlements;
 				DEVELOPMENT_TEAM = G4YGRUL9T2;
 				INFOPLIST_FILE = BookClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -750,6 +762,7 @@
 			baseConfigurationReference = B9EE963A4BFE0EA1A6EBFAAC /* Pods-BookClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BookClub/BookClub.entitlements;
 				DEVELOPMENT_TEAM = G4YGRUL9T2;
 				INFOPLIST_FILE = BookClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

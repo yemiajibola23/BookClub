@@ -20,18 +20,18 @@ class HomeViewController: UIViewController {
         bookListDataProvider.reader = reader
         bookTableView.dataSource = bookListDataProvider
         bookTableView.delegate = bookListDataProvider
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        
+        reader = Reader(name: "Test Reader")
     }
     
 
     @IBAction func addNewBook(sender: UIBarButtonItem) {
         let addBookAlert = UIAlertController(title: "Add A Book", message: nil, preferredStyle: .alert)
+        
         addBookAlert.addTextField { (textField) in
             textField.placeholder = "Title"
         }
+        
         addBookAlert.addTextField { (textField) in
             textField.placeholder = "Author"
         }

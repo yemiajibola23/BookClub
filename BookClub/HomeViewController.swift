@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
             try FIRAuth.auth()?.signOut()
             _ = navigationController?.popViewController(animated: true)
         } catch {
-            print(error.localizedDescription)
+            errorAlert(message: error.localizedDescription)
         }
     }
     
@@ -90,6 +90,14 @@ class HomeViewController: UIViewController {
             self.reader.readBooks = booksToAdd
             self.bookTableView.reloadData()
         })
+    }
+    
+    func errorAlert(message: String) {
+        let errorAlert = UIAlertController(title: "An error occurred processing your request. Please try again", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        errorAlert.addAction(okAction)
+        present(errorAlert, animated: true, completion: nil)
     }
 }
 

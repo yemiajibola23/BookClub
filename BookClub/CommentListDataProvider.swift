@@ -12,15 +12,14 @@ class CommentListDataProvider: NSObject, UITableViewDataSource {
     var book: Book!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return book.commentsCount
+        return book.comments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentTableViewCell
         
-        if let comment = book.commentAt(index: indexPath.row) {
-            cell.configCellWithComment(comment: comment)
-        }
+        let comment = book.comments[indexPath.row]
+        cell.configCellWithComment(comment: comment)
         
         return cell
     }

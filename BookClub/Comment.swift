@@ -7,10 +7,29 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct Comment {
     var text: String
     var username: String
+    var ref: FIRDatabaseReference?
+    var ID: String?
+    
+    func toAnyObject() -> [String: String] {
+        return ["text": self.text, "username": self.username]
+    }
+    
+    init(snapshot: FIRDataSnapshot) {
+        ID = snapshot.key
+        
+        let value = snapshot.value as! [String: String]
+        
+        text = value["text"]!
+        username = value["username"]!
+        
+        ref = snapshot.ref
+        
+    }
 }
 
 

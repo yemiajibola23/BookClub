@@ -12,8 +12,7 @@ import FirebaseDatabase
 struct Book {
     var title: String
     var author: String
-    private var comments: [Comment]
-    var commentsCount: Int { return comments.count }
+    var comments: [Comment]
     var ID: String?
     var ref: FIRDatabaseReference?
     
@@ -46,19 +45,14 @@ struct Book {
         comments = [Comment]()
     }
     
-    mutating func addComment(comment: Comment) {
-        comments.append(comment)
-    }
-    
-    func commentAt(index: Int) -> Comment? {
-        
-        if index >= commentsCount || index < 0 { return nil }
-        return comments[index]
-    }
-    
     func toAnyObject() -> [String: String] {
         return ["title": self.title, "author": self.author]
     }
+    
+    func add(comment: Comment) {
+        
+    }
+   
 }
 
 

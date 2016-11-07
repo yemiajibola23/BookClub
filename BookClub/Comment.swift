@@ -15,8 +15,9 @@ struct Comment {
     var ref: FIRDatabaseReference?
     var ID: String?
     
-    func toAnyObject() -> [String: String] {
-        return ["text": self.text, "username": self.username]
+    init(text: String, username: String) {
+        self.text = text
+        self.username = username
     }
     
     init(snapshot: FIRDataSnapshot) {
@@ -28,7 +29,10 @@ struct Comment {
         username = value["username"]!
         
         ref = snapshot.ref
-        
+    }
+    
+    func toAnyObject() -> [String: String] {
+        return ["text": self.text, "username": self.username]
     }
 }
 

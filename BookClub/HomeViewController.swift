@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var bookTableView: UITableView!
     
     var reader: Reader!
+    let identifier = "toBookDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +99,14 @@ class HomeViewController: UIViewController {
         
         errorAlert.addAction(okAction)
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == identifier {
+            let bookDetailVC = segue.destination as! BookDetailViewController
+            bookDetailVC.book = reader.readBooks[bookTableView.indexPathForSelectedRow!.row]
+            bookDetailVC.reader = reader
+        }
     }
 }
 

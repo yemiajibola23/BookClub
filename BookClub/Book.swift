@@ -24,12 +24,15 @@ struct Book {
     
     init(snapshot: FIRDataSnapshot) {
         ID = snapshot.key
-        let value = snapshot.value as! [String: String]
+        let value = snapshot.value as! [String: AnyObject]
         
-        title = value["title"]!
-        author = value["author"]!
+        title = value["title"]! as! String
+        author = value["author"]! as! String
         
-        comments = [Comment]()
+        if let commentsFromDatabase = value["comments"] {
+            //comments = commentsFromDatabase
+        }
+        else { comments = [Comment]() }
         
         ref = snapshot.ref
     }
@@ -50,7 +53,8 @@ struct Book {
     }
     
     func add(comment: Comment) {
-        
+        let commentDictionary = comment.toAnyObject()
+        ref!.child("comments").childByAutoId().setValue(commentDictionary)
     }
    
 }

@@ -11,10 +11,12 @@ import FirebaseDatabase
 
 class BookDetailViewController: UIViewController {
     var book: Book!
+    var reader: Reader!
     
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentListDataProvider: CommentListDataProvider!
+    @IBOutlet weak var commentTextField: UITextField!
     
     override func viewDidLoad() {
         navigationItem.title = book.title
@@ -38,5 +40,12 @@ class BookDetailViewController: UIViewController {
             self.book.comments = commmentsToAdd
             self.commentsTableView.reloadData()
         })
+    }
+    
+    @IBAction func addNewComment(sender: UIButton) {
+        let comment = Comment(text: commentTextField.text!, username: reader.name)
+        book.add(comment: comment)
+        
+        fetchComments()
     }
 }

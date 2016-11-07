@@ -33,11 +33,19 @@ class Reader {
         
         name = value["name"] as! String
         
-        let bookArray = value["books"] as! NSArray
+        let bookDictionary = value["books"] as! [String : AnyObject]
+    
+        readBooks = [Book]()
         
+        var finalBooks:[Book] = []
+        for item in bookDictionary {
+            let book = Book(key: item.key, value: item.value as! [String : String], reader: self)
+            finalBooks.append(book)
+        }
         
+        readBooks = finalBooks
         
-        ref = FIRDatabase.database().reference(withPath: "users/\(ID!)")
+        ref = user.ref
     }
     
     func add(book: Book) {

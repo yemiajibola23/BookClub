@@ -35,6 +35,17 @@ struct Book {
         ref = snapshot.ref
     }
     
+    init(key: String, value: [String : String], reader: Reader) {
+        ID = key
+        
+        title = value["title"]!
+        author = value["author"]!
+        
+        ref = FIRDatabase.database().reference(withPath: "users/\(reader.ID)/books/\(key)")
+        
+        comments = [Comment]()
+    }
+    
     mutating func addComment(comment: Comment) {
         comments.append(comment)
     }

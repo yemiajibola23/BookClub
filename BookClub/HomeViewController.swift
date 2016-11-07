@@ -55,7 +55,7 @@ class HomeViewController: UIViewController {
             let bookToAdd =  Book(title: title!, author: author!)
             
             self.reader.add(book: bookToAdd)
-           self.fetchBooksForReader()
+            self.fetchBooksForReader()
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -90,10 +90,7 @@ class HomeViewController: UIViewController {
             self.reader.readBooks = booksToAdd
             self.bookTableView.reloadData()
         })
-        
-        
     }
-
 }
 
 extension HomeViewController: BookListProviderDelegate {

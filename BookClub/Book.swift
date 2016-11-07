@@ -7,16 +7,28 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct Book {
     var title: String
     var author: String
     private var comments: [Comment]
     var commentsCount: Int { return comments.count }
+    var ID: String?
     
     init(title: String, author: String) {
         self.title = title
         self.author = author
+        comments = [Comment]()
+    }
+    
+    init(snapshot: FIRDataSnapshot) {
+        ID = snapshot.key
+        let value = snapshot.value as! [String: String]
+        
+        title = value["title"]!
+        author = value["author"]!
+        
         comments = [Comment]()
     }
     
@@ -28,6 +40,10 @@ struct Book {
         
         if index >= commentsCount || index < 0 { return nil }
         return comments[index]
+    }
+    
+    func toAnyObject() -> [String: String] {
+        return ["title": self.title, "author": self.author]
     }
 }
 

@@ -12,15 +12,15 @@ class BookListDataProvider: NSObject, UITableViewDelegate, UITableViewDataSource
     var reader: Reader!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reader.readBooksCount
+        return reader.readBooks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell", for: indexPath) as! BookTableViewCell
         
-        if let bookForCell = reader.bookAt(index: indexPath.row) {
-                cell.configCellWithBook(book: bookForCell)
-        }
+        let bookForCell = reader.readBooks[indexPath.row]
+        cell.configCellWithBook(book: bookForCell)
+
         
         return cell
         

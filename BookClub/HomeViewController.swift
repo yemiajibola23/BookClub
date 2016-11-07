@@ -28,6 +28,8 @@ class HomeViewController: UIViewController {
                 self.bookTableView.delegate = self.bookListDataProvider
                 
                 self.navigationItem.title = "Hi \(self.reader.name)!"
+                
+                self.fetchBooksForReader()
             })
         })
 
@@ -50,7 +52,7 @@ class HomeViewController: UIViewController {
             let bookToAdd =  Book(title: title!, author: author!)
             
             self.reader.addBook(book: bookToAdd)
-            self.bookTableView.reloadData()
+           self.fetchBooksForReader()
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -68,6 +70,25 @@ class HomeViewController: UIViewController {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func fetchBooksForReader() {
+        let ref = FIRDatabase.database().reference(withPath: "users/\(reader.ID!)/books")
+        
+        var booksToAdd:[Book] = []
+        
+        ref.observe(.value, with: { snapshot in
+            
+            for book in snapshot.children {
+                let bookToAdd = Book(snapshot: book as! FIRDataSnapshot)
+                booksToAdd.append(bookToAdd)
+            }
+            
+            self.reader.readBooks = booksToAdd
+            self.bookTableView.reloadData()
+        })
+        
+        
     }
 
 }

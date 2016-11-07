@@ -11,10 +11,11 @@ import Firebase
 import FirebaseDatabase
 
 class Reader {
-    private var readBooks: [Book]
+    var readBooks: [Book]
     var name: String
+    var ID: String?
+    var ref: FIRDatabaseReference?
     
-    var readBooksCount: Int { return readBooks.count }
     
     init(name: String?) {
         
@@ -25,22 +26,21 @@ class Reader {
     }
     
     init(user: FIRDataSnapshot) {
+        
+        ID = user.key 
+        
         let value = user.value as! [String: AnyObject]
         
         name = value["name"] as! String
         readBooks = [Book]()
+        
+        ref = FIRDatabase.database().reference(withPath: "users/\(ID!)")
     }
     
     func addBook(book: Book) {
-        readBooks.append(book)
+        let bookDictionary = book.toAnyObject()
+        ref!.child("books").childByAutoId().setValue(bookDictionary)
     }
     
-    func bookAt(index: Int) -> Book? {
-        return readBooks[index]
-    }
-    
-    func removeBookAt(index: Int) -> Book {
-        return readBooks.remove(at: index)
-    }
     
 }

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseDatabase
 
 class Reader {
     private var readBooks: [Book]
@@ -19,6 +21,13 @@ class Reader {
         if let name = name { self.name = name }
         else { self.name = "" }
         
+        readBooks = [Book]()
+    }
+    
+    init(user: FIRDataSnapshot) {
+        let value = user.value as! [String: AnyObject]
+        
+        name = value["name"] as! String
         readBooks = [Book]()
     }
     

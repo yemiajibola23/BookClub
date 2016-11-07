@@ -17,16 +17,15 @@ class LoginViewController: UIViewController, FirebaseAuthenticatorDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //FirebaseAuthenticator.listenForLogin()
         FirebaseAuthenticator.delegate = self
+        FirebaseAuthenticator.listenForLogin()
     }
     
     
     @IBAction func loginButtonTapped(sender: UIButton) {
         let email = emailTextField.text!
         let password = passwordTextField.text!
-        
-        
+    
         FirebaseAuthenticator.login(email: email, password: password)
     }
     
@@ -59,6 +58,15 @@ class LoginViewController: UIViewController, FirebaseAuthenticatorDelegate {
     
     func loginVerified() {
         self.performSegue(withIdentifier: identifier, sender: self)
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
     
+    func errorAlert(message: String) {
+        let errorAlert = UIAlertController(title: "An error occurred processing your request. Please try again", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        
+        errorAlert.addAction(okAction)
+        present(errorAlert, animated: true, completion: nil)
+    }
 }

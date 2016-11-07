@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     @IBOutlet var bookListDataProvider: BookListDataProvider!
@@ -16,14 +18,20 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        bookListDataProvider.reader = reader
-        bookTableView.dataSource = bookListDataProvider
-        bookTableView.delegate = bookListDataProvider
-        
-        reader = Reader(name: "Test Reader")
+        FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+            guard let user = user else { return }
+            FIRDatabase.database().reference(withPath: "users/\(user.uid)").observe(.value, with: { (snapshot) in
+                self.reader = Reader(user: snapshot)
+                
+                self.bookListDataProvider.reader = self.reader
+                self.bookTableView.dataSource = self.bookListDataProvider
+                self.bookTableView.delegate = self.bookListDataProvider
+                
+                self.navigationItem.title = "Hi \(self.reader.name)!"
+            })
+        })
+
     }
-    
 
     @IBAction func addNewBook(sender: UIBarButtonItem) {
         let addBookAlert = UIAlertController(title: "Add A Book", message: nil, preferredStyle: .alert)
@@ -51,6 +59,15 @@ class HomeViewController: UIViewController {
         addBookAlert.addAction(cancelAction)
         
         present(addBookAlert, animated: true, completion: nil)
+    }
+    
+    @IBAction func logoutButtonTapped(sender: UIBarButtonItem) {
+        do {
+            try FIRAuth.auth()?.signOut()
+            _ = navigationController?.popViewController(animated: true)
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 
 }

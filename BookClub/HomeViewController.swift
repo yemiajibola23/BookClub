@@ -18,6 +18,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bookListDataProvider.delegate = self
+        
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
             guard let user = user else { return }
             FIRDatabase.database().reference(withPath: "users/\(user.uid)").observe(.value, with: { (snapshot) in
@@ -51,7 +54,7 @@ class HomeViewController: UIViewController {
             let author = addBookAlert.textFields?.last?.text
             let bookToAdd =  Book(title: title!, author: author!)
             
-            self.reader.addBook(book: bookToAdd)
+            self.reader.add(book: bookToAdd)
            self.fetchBooksForReader()
         })
         
@@ -91,4 +94,10 @@ class HomeViewController: UIViewController {
         
     }
 
+}
+
+extension HomeViewController: BookListProviderDelegate {
+    func bookListWasUpdated() {
+        self.fetchBooksForReader()
+    }
 }

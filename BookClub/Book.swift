@@ -15,6 +15,7 @@ struct Book {
     private var comments: [Comment]
     var commentsCount: Int { return comments.count }
     var ID: String?
+    var ref: FIRDatabaseReference?
     
     init(title: String, author: String) {
         self.title = title
@@ -30,6 +31,8 @@ struct Book {
         author = value["author"]!
         
         comments = [Comment]()
+        
+        ref = snapshot.ref
     }
     
     mutating func addComment(comment: Comment) {

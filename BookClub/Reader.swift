@@ -32,15 +32,21 @@ class Reader {
         let value = user.value as! [String: AnyObject]
         
         name = value["name"] as! String
-        readBooks = [Book]()
+        
+        let bookArray = value["books"] as! NSArray
+        
+        
         
         ref = FIRDatabase.database().reference(withPath: "users/\(ID!)")
     }
     
-    func addBook(book: Book) {
+    func add(book: Book) {
         let bookDictionary = book.toAnyObject()
         ref!.child("books").childByAutoId().setValue(bookDictionary)
     }
     
+    func remove(book: Book) {
+        book.ref?.removeValue()
+    }
     
 }

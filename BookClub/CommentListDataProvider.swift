@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentListDataProvider: NSObject, UITableViewDataSource {
+class CommentListDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     var book: Book!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

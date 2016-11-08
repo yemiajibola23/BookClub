@@ -24,6 +24,7 @@ class BookDetailViewController: UIViewController {
         commentListDataProvider.book = book
         
         commentsTableView.dataSource = commentListDataProvider
+        commentsTableView.delegate = commentListDataProvider
         
         fetchComments()
     }
@@ -31,13 +32,15 @@ class BookDetailViewController: UIViewController {
     func fetchComments() {
         var commmentsToAdd:[Comment] = []
         
-        book.ref?.child("comments").observe(.value, with: { (snapshot) in
+        book.ref!.child("comments").observe(.value, with: { (snapshot) in
             for comment in snapshot.children {
                 let commentToAdd = Comment(snapshot: comment as! FIRDataSnapshot)
                 commmentsToAdd.append(commentToAdd)
             }
             
             self.book.comments = commmentsToAdd
+            
+            self.commentListDataProvider.book = self.book
             self.commentsTableView.reloadData()
         })
     }

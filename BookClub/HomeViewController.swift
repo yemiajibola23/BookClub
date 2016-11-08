@@ -77,11 +77,9 @@ class HomeViewController: UIViewController {
     }
     
     func fetchBooksForReader() {
-        let ref = FIRDatabase.database().reference(withPath: "users/\(reader.ID!)/books")
-        
         var booksToAdd:[Book] = []
         
-        ref.observe(.value, with: { snapshot in
+        reader.ref!.child("books").observe(.value, with: { snapshot in
             
             for book in snapshot.children {
                 let bookToAdd = Book(snapshot: book as! FIRDataSnapshot)

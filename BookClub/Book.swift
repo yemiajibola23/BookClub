@@ -29,10 +29,7 @@ struct Book {
         title = value["title"]! as! String
         author = value["author"]! as! String
         
-        if let commentsFromDatabase = value["comments"] {
-            //comments = commentsFromDatabase
-        }
-        else { comments = [Comment]() }
+        comments = [Comment]()
         
         ref = snapshot.ref
     }

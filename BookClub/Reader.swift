@@ -32,18 +32,8 @@ class Reader {
         let value = user.value as! [String: AnyObject]
         
         name = value["name"] as! String
-        
-        let bookDictionary = value["books"] as! [String : AnyObject]
-    
+            
         readBooks = [Book]()
-        
-        var finalBooks:[Book] = []
-        for item in bookDictionary {
-            let book = Book(key: item.key, value: item.value as! [String : String], reader: self)
-            finalBooks.append(book)
-        }
-        
-        readBooks = finalBooks
         
         ref = user.ref
     }

@@ -311,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWu-BY-6oi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" textLabel="kFH-Hb-Vwt" style="IBUITableViewCellStyleDefault" id="t5b-G8-wvs">
@@ -333,19 +333,44 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QBU-nH-kw1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="j4U-UM-uMh"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="biv-eU-xOc" id="BzY-xZ-0oe"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QBU-nH-kw1" firstAttribute="top" secondItem="MrX-EO-TPe" secondAttribute="top" id="5dl-7g-1gf"/>
                             <constraint firstItem="OqU-U1-Eol" firstAttribute="top" secondItem="NWu-BY-6oi" secondAttribute="bottom" id="7nI-0H-HDt"/>
                             <constraint firstItem="NWu-BY-6oi" firstAttribute="leading" secondItem="MrX-EO-TPe" secondAttribute="leading" id="BAp-JY-krF"/>
-                            <constraint firstItem="NWu-BY-6oi" firstAttribute="top" secondItem="MrX-EO-TPe" secondAttribute="top" id="LVQ-mj-5WQ"/>
+                            <constraint firstItem="QBU-nH-kw1" firstAttribute="leading" secondItem="MrX-EO-TPe" secondAttribute="leading" id="ECM-6U-IIS"/>
+                            <constraint firstItem="NWu-BY-6oi" firstAttribute="top" secondItem="MrX-EO-TPe" secondAttribute="top" constant="44" id="LVQ-mj-5WQ"/>
+                            <constraint firstAttribute="trailing" secondItem="QBU-nH-kw1" secondAttribute="trailing" id="VJt-wp-JKt"/>
                             <constraint firstAttribute="trailing" secondItem="NWu-BY-6oi" secondAttribute="trailing" id="qH9-Wi-P1j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="m4f-Xd-3RE" id="ebX-yc-NgT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xl5-O3-4mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="m4f-Xd-3RE">
+                    <connections>
+                        <outlet property="delegate" destination="biv-eU-xOc" id="8Ee-CH-cmq"/>
+                        <outlet property="searchBar" destination="QBU-nH-kw1" id="tcv-ch-6qv"/>
+                        <outlet property="searchContentsController" destination="biv-eU-xOc" id="bQJ-nw-ZMn"/>
+                        <outlet property="searchResultsDataSource" destination="biv-eU-xOc" id="B2l-TT-zot"/>
+                        <outlet property="searchResultsDelegate" destination="biv-eU-xOc" id="NPv-nQ-S3O"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2481" y="679"/>
+            <point key="canvasLocation" x="2480.8000000000002" y="678.71064467766121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IJw-6S-183">

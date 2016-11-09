@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     
     var reader: Reader!
     let identifier = "toBookDetail"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

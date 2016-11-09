@@ -40,11 +40,76 @@ class Reader {
     
     func add(book: Book) {
         let bookDictionary = book.toAnyObject()
-        ref!.child("books").childByAutoId().setValue(bookDictionary)
+        
+        
+        checkDatabseForBook(book: book, withCompletionHandler: { checkDB in
+            if !checkDB {
+                let bookRef = FIRDatabase.database().reference(withPath: "books")
+                bookRef.child(book.ID.uuidString).setValue(bookDictionary)
+            } else {
+                print("Book is already in database. Not adding it.")
+            }
+            
+            
+        })
+        
+        checkCollectionForBook(book: book, withCompletionHandler: { checkCollection in
+            if !checkCollection {
+                self.ref!.child("books").child(book.ID.uuidString).setValue(bookDictionary)
+            } else {
+                print("Book is already in database. Not adding it.")
+            }
+            
+        
+        })
+        
+        
     }
     
     func remove(book: Book) {
         book.ref?.removeValue()
+    }
+    
+    
+    func checkDatabseForBook(book: Book, withCompletionHandler: @escaping (_ databaseHasBook: Bool) -> Void) {
+        
+        let bookRef = FIRDatabase.database().reference(withPath: "books")
+        
+        bookRef.observe(.value, with: { snapshot in
+            
+            var databaseHasBook = false
+            for snap in snapshot.children {
+                let realSnap = snap as! FIRDataSnapshot
+                
+                let bookDictionary = realSnap.value as! [String: String]
+                
+                let bookFromDatabase = Book(key: realSnap.key, value: bookDictionary, reader: self)
+                if book == bookFromDatabase { databaseHasBook = true }
+            }
+            
+            withCompletionHandler(databaseHasBook)
+            
+        })
+    }
+    
+    func checkCollectionForBook(book: Book, withCompletionHandler: @escaping (_ databaseHasBook: Bool) -> Void) {
+        
+        
+        ref!.child("books").observe(.value, with: { snapshot in
+            
+            var databaseHasBook = false
+            for snap in snapshot.children {
+                let realSnap = snap as! FIRDataSnapshot
+                
+                let bookDictionary = realSnap.value as! [String: String]
+                
+                let bookFromDatabase = Book(key: realSnap.key, value: bookDictionary, reader: self)
+                if book == bookFromDatabase { databaseHasBook = true }
+            }
+            
+            withCompletionHandler(databaseHasBook)
+            
+        })
     }
     
 }

@@ -13,18 +13,21 @@ struct Book {
     var title: String
     var author: String
     var comments: [Comment]
-    var ID: String?
+    var ID: UUID
     var ref: FIRDatabaseReference?
     
     init(title: String, author: String) {
         self.title = title
         self.author = author
         comments = [Comment]()
+        ID = UUID()
     }
     
     init(snapshot: FIRDataSnapshot) {
-        ID = snapshot.key
         let value = snapshot.value as! [String: AnyObject]
+        
+        let IDString = snapshot.key
+        ID = UUID(uuidString: IDString)!
         
         title = value["title"]! as! String
         author = value["author"]! as! String
@@ -35,7 +38,9 @@ struct Book {
     }
     
     init(key: String, value: [String : String], reader: Reader) {
-        ID = key
+        
+        let IDString = key
+        ID = UUID(uuidString: IDString)!
         
         title = value["title"]!
         author = value["author"]!
@@ -48,6 +53,7 @@ struct Book {
     func toAnyObject() -> [String: String] {
         return ["title": self.title, "author": self.author]
     }
+
     
     func add(comment: Comment) {
         let commentDictionary = comment.toAnyObject()

@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class BookDetailViewController: UIViewController {
+class BookDetailViewController: UIViewController, UITextFieldDelegate {
     var book: Book!
     var reader: Reader!
     
@@ -17,6 +17,7 @@ class BookDetailViewController: UIViewController {
     @IBOutlet weak var commentsTableView: UITableView!
     @IBOutlet weak var commentListDataProvider: CommentListDataProvider!
     @IBOutlet weak var commentTextField: UITextField!
+    @IBOutlet weak var postButton: UIButton!
     
     override func viewDidLoad() {
         navigationItem.title = book.title
@@ -27,6 +28,10 @@ class BookDetailViewController: UIViewController {
         commentsTableView.delegate = commentListDataProvider
         
         fetchComments()
+        
+        postButton.isEnabled = false
+        
+        commentTextField.addTarget(self, action: #selector(BookDetailViewController.textFieldDidChange), for: UIControlEvents.editingChanged)
     }
     
     func fetchComments() {
@@ -43,6 +48,14 @@ class BookDetailViewController: UIViewController {
             self.commentListDataProvider.book = self.book
             self.commentsTableView.reloadData()
         })
+    }
+    
+    func textFieldDidChange() {
+        if !commentTextField.text!.isEmpty {
+            postButton.isEnabled = true
+        } else {
+            postButton.isEnabled = false
+        }
     }
     
     @IBAction func addNewComment(sender: UIButton) {

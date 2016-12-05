@@ -29,7 +29,6 @@
 		DB968B821DC26D24007A7037 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB968B801DC26D24007A7037 /* LaunchScreen.storyboard */; };
 		DB968BA71DC26FB5007A7037 /* BookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA61DC26FB5007A7037 /* BookTests.swift */; };
 		DB968BA91DC2705D007A7037 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BA81DC2705D007A7037 /* Book.swift */; };
-		DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BAB1DC342FC007A7037 /* Constants.swift */; };
 		DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */; };
 		DBA34B4C1DC4D5560001D348 /* ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */; };
 		DBA34B4F1DC4E39B0001D348 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */; };
@@ -38,6 +37,8 @@
 		DBA34B591DC4F2D60001D348 /* BookListDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B581DC4F2D60001D348 /* BookListDataProviderTests.swift */; };
 		DBA34B5B1DC4F31B0001D348 /* BookListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B5A1DC4F31B0001D348 /* BookListDataProvider.swift */; };
 		DBA34B621DC525D80001D348 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA34B611DC525D80001D348 /* BookCollectionViewCell.swift */; };
+		DBB78A6E1DD560930013D643 /* ReaderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB78A6D1DD560930013D643 /* ReaderListViewController.swift */; };
+		DBB78A701DD561370013D643 /* ReaderListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB78A6F1DD561370013D643 /* ReaderListDataProvider.swift */; };
 		DBE157B01DCC491D0063A0D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */; };
 		DBE157B21DCC4CF80063A0D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */; };
 		DBE157B71DCC657C0063A0D7 /* FirebaseAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE157B61DCC657C0063A0D7 /* FirebaseAuthenticator.swift */; };
@@ -96,7 +97,6 @@
 		DB968B991DC26D25007A7037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB968BA61DC26FB5007A7037 /* BookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTests.swift; sourceTree = "<group>"; };
 		DB968BA81DC2705D007A7037 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
-		DB968BAB1DC342FC007A7037 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DB968BB01DC3B6A0007A7037 /* LibraryAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPIClient.swift; sourceTree = "<group>"; };
 		DBA34B4B1DC4D5560001D348 /* ReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderTests.swift; sourceTree = "<group>"; };
 		DBA34B4E1DC4E39B0001D348 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		DBA34B581DC4F2D60001D348 /* BookListDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListDataProviderTests.swift; sourceTree = "<group>"; };
 		DBA34B5A1DC4F31B0001D348 /* BookListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListDataProvider.swift; sourceTree = "<group>"; };
 		DBA34B611DC525D80001D348 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		DBB78A6D1DD560930013D643 /* ReaderListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderListViewController.swift; sourceTree = "<group>"; };
+		DBB78A6F1DD561370013D643 /* ReaderListDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderListDataProvider.swift; sourceTree = "<group>"; };
 		DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DBE157B51DCC647A0063A0D7 /* BookClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BookClub.entitlements; sourceTree = "<group>"; };
@@ -236,7 +238,6 @@
 				DB968B801DC26D24007A7037 /* LaunchScreen.storyboard */,
 				DB968B831DC26D24007A7037 /* Info.plist */,
 				DBE157AF1DCC491D0063A0D7 /* GoogleService-Info.plist */,
-				DB968BAB1DC342FC007A7037 /* Constants.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -272,6 +273,8 @@
 				DB42F9121DC6C8A500DEB6EB /* BookDetailViewController.swift */,
 				DB42F9181DC7029A00DEB6EB /* CommentListDataProvider.swift */,
 				DBE157B11DCC4CF80063A0D7 /* LoginViewController.swift */,
+				DBB78A6D1DD560930013D643 /* ReaderListViewController.swift */,
+				DBB78A6F1DD561370013D643 /* ReaderListDataProvider.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -586,10 +589,11 @@
 				DBE157B91DCCCB000063A0D7 /* FirebaseDatabaseManager.swift in Sources */,
 				DB42F91B1DC705C400DEB6EB /* Comment.swift in Sources */,
 				DB70C5D41DC7A07500171E15 /* CommentTableViewCell.swift in Sources */,
-				DB968BAC1DC342FC007A7037 /* Constants.swift in Sources */,
 				DB968BB11DC3B6A0007A7037 /* LibraryAPIClient.swift in Sources */,
+				DBB78A701DD561370013D643 /* ReaderListDataProvider.swift in Sources */,
 				DBA34B511DC4E3DE0001D348 /* HomeViewController.swift in Sources */,
 				DBA34B5B1DC4F31B0001D348 /* BookListDataProvider.swift in Sources */,
+				DBB78A6E1DD560930013D643 /* ReaderListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

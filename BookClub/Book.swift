@@ -37,15 +37,17 @@ struct Book {
         ref = snapshot.ref
     }
     
-    init(key: String, value: [String : String], reader: Reader) {
+    init(key: String, value: [String : String], reader: Reader? = nil) {
         
-        let IDString = key
-        ID = UUID(uuidString: IDString)!
+        ID = UUID(uuidString: key)!
         
         title = value["title"]!
         author = value["author"]!
         
-        ref = FIRDatabase.database().reference(withPath: "users/\(reader.ID)/books/\(key)")
+        
+        if let reader = reader {
+             ref = FIRDatabase.database().reference(withPath: "users/\(reader.ID)/books/\(key)")
+        }
         
         comments = [Comment]()
     }

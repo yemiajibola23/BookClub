@@ -11,20 +11,16 @@ import FirebaseDatabase
 
 
 class FirebaseDatabaseManager {
-    static var userRef: FIRDatabaseReference!
-    static var bookRef: FIRDatabaseReference!
-    
-    init() {
-        FirebaseDatabaseManager.userRef = FIRDatabase.database().reference().child("users")
-        FirebaseDatabaseManager.bookRef = FIRDatabase.database().reference().child("book")
-    }
     
     static func set(userInfo: [String : String], with uid: String) {
-        let currentUserRef = userRef.child("users/\(uid)")
+        let userRef = FIRDatabase.database().reference().child("users")
+        let currentUserRef = userRef.child("\(uid)")
        currentUserRef.setValue(userInfo)
     }
     
-    static func checkDatabaseFor(book: Book, reader: Reader, withCompletionHandler:@escaping (_ databaseHasBook: Bool) -> Void)  {
+    static func checkDatabaseFor(book: Book, withCompletionHandler:@escaping (_ databaseHasBook: Bool) -> Void)  {
+        
+        let bookRef =  FIRDatabase.database().reference().child("books")
         bookRef.observe(.value, with: { snapshot in
             
             var databaseHasBook = false
@@ -33,7 +29,7 @@ class FirebaseDatabaseManager {
                 
                 let bookDictionary = realSnap.value as! [String: String]
                 
-                let bookFromDatabase = Book(key: realSnap.key, value: bookDictionary, reader: reader)
+                let bookFromDatabase = Book(key: realSnap.key, value: bookDictionary, reader: nil)
                 if book == bookFromDatabase { databaseHasBook = true }
             }
             
@@ -44,19 +40,20 @@ class FirebaseDatabaseManager {
     
     static func checkCollectionFor(book: Book, reader: Reader, withCompletionHandler: @escaping (_ databaseHasBook: Bool) -> Void) {
         
+        
         reader.ref!.child("books").observe(.value, with: { snapshot in
             
-            var databaseHasBook = false
+            var readerHasBookInCollection = false
             for snap in snapshot.children {
                 let realSnap = snap as! FIRDataSnapshot
                 
                 let bookDictionary = realSnap.value as! [String: String]
                 
                 let bookFromDatabase = Book(key: realSnap.key, value: bookDictionary, reader: reader)
-                if book == bookFromDatabase { databaseHasBook = true }
+                if book == bookFromDatabase { readerHasBookInCollection = true }
             }
             
-            withCompletionHandler(databaseHasBook)
+            withCompletionHandler(readerHasBookInCollection)
             
         })
     }

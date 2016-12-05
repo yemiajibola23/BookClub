@@ -58,6 +58,10 @@ class BookDetailViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // TODO: Raise keyboard
+    }
+    
     @IBAction func addNewComment(sender: UIButton) {
         let comment = Comment(text: commentTextField.text!, username: reader.name)
         book.add(comment: comment)

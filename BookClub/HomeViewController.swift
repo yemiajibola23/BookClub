@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
         bookListDataProvider.delegate = self
         
         FIRAuth.auth()?.addStateDidChangeListener({ (auth, user) in
+                        
             guard let user = user else { return }
             FIRDatabase.database().reference(withPath: "users/\(user.uid)").observe(.value, with: { (snapshot) in
                 self.reader = Reader(user: snapshot)

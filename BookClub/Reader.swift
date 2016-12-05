@@ -40,7 +40,7 @@ class Reader {
     func add(book: Book) {
         let bookDictionary = book.toAnyObject()
         
-        FirebaseDatabaseManager.checkDatabaseFor(book: book, reader: self, withCompletionHandler: { checkDB in
+        FirebaseDatabaseManager.checkDatabaseFor(book: book, withCompletionHandler: { checkDB in
             if !checkDB {
                 let bookRef = FIRDatabase.database().reference(withPath: "books")
                 bookRef.child(book.ID.uuidString).setValue(bookDictionary)

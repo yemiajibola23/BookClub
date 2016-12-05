@@ -107,18 +107,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMk-0e-6K0" id="FFi-oF-LN7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mbL-O6-lW6">
-                                                    <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QgO-eN-2nj">
-                                                    <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -188,7 +188,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9yG-oh-SX1" id="DLt-fm-7PE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKz-Qj-lZm">
@@ -279,11 +279,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Mqd-Do-v4N">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="gMb-NM-E1d">
-                            <connections>
-                                <segue destination="biv-eU-xOc" kind="presentation" id="ryp-JW-JM1"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="gMb-NM-E1d"/>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="XuC-yp-Gsk" id="4bF-l0-HZS"/>
@@ -298,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="2480.8000000000002" y="-13.043478260869566"/>
         </scene>
-        <!--View Controller-->
+        <!--Reader List View Controller-->
         <scene sceneID="012-FI-N7f">
             <objects>
-                <viewController id="biv-eU-xOc" sceneMemberID="viewController">
+                <viewController id="biv-eU-xOc" customClass="ReaderListViewController" customModule="BookClub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PDF-c4-k5Q"/>
                         <viewControllerLayoutGuide type="bottom" id="OqU-U1-Eol"/>
@@ -310,19 +306,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWu-BY-6oi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NWu-BY-6oi">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" textLabel="kFH-Hb-Vwt" style="IBUITableViewCellStyleDefault" id="t5b-G8-wvs">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReaderCell" textLabel="kFH-Hb-Vwt" rowHeight="57" style="IBUITableViewCellStyleDefault" id="t5b-G8-wvs">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t5b-G8-wvs" id="a2A-5R-tQn">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kFH-Hb-Vwt">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="56.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -356,10 +352,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="readerListDataProvider" destination="FXE-UV-0Ib" id="k0e-j4-odA"/>
+                        <outlet property="readerListTableView" destination="NWu-BY-6oi" id="jq8-21-cdc"/>
                         <outlet property="searchDisplayController" destination="m4f-Xd-3RE" id="ebX-yc-NgT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xl5-O3-4mS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="FXE-UV-0Ib" customClass="ReaderListDataProvider" customModule="BookClub" customModuleProvider="target"/>
                 <searchDisplayController id="m4f-Xd-3RE">
                     <connections>
                         <outlet property="delegate" destination="biv-eU-xOc" id="8Ee-CH-cmq"/>
@@ -370,7 +369,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2480.8000000000002" y="678.71064467766121"/>
+            <point key="canvasLocation" x="1709.5999999999999" y="661.61919040479768"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IJw-6S-183">
